@@ -1,0 +1,61 @@
+import pygame
+import random
+
+# Initialize pygame
+pygame.init()
+
+# Set up the display
+width, height = 400, 400
+size = width, height
+screen = pygame.display.set_mode(size)
+
+# Define colors
+black = (0, 0, 0)
+white = (255, 255, 255)
+
+# Create a 4x4 grid of empty tiles
+grid = [[0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]]
+
+# Add a starting tile
+grid[random.randint(0, 3)][random.randint(0, 3)] = 2
+
+# Main game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Move the tiles
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        # Move the tiles to the left
+        pass
+    elif keys[pygame.K_RIGHT]:
+        # Move the tiles to the right
+        pass
+    elif keys[pygame.K_UP]:
+        # Move the tiles up
+        pass
+    elif keys[pygame.K_DOWN]:
+        # Move the tiles down
+        pass
+
+    # Combine the tiles
+    # Add a new random tile
+
+    # Draw the grid
+    screen.fill(black)
+    for i in range(4):
+        for j in range(4):
+            pygame.draw.rect(screen, white, (i*100, j*100, 100, 100), 2)
+            if grid[i][j] != 0:
+                pass  
+
+    pygame.display.flip()
+
+# Quit pygame
+pygame.quit()
